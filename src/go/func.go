@@ -4,7 +4,3 @@ import (
 	"errors"
 	"fmt"
 )
-
-func main() {
-
-}
