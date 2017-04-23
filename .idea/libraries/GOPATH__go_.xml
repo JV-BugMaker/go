@@ -1,0 +1,23 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;go&gt;">
+    <CLASSES>
+      <root url="file://$USER_HOME$/dehelper/src/gopkg.in" />
+      <root url="file://$USER_HOME$/dehelper/src/github.com" />
+      <root url="file://$USER_HOME$/dehelper/src/golang.org" />
+      <root url="file://$USER_HOME$/dehelper/src/dehelper" />
+      <root url="file://$USER_HOME$/dehelper/src/sourcegraph.com" />
+      <root url="file://$USER_HOME$/dehelper/src/config" />
+    </CLASSES>
+    <SOURCES>
+      <root url="file://$USER_HOME$/dehelper/src/gopkg.in" />
+      <root url="file://$USER_HOME$/dehelper/src/github.com" />
+      <root url="file://$USER_HOME$/dehelper/src/golang.org" />
+      <root url="file://$USER_HOME$/dehelper/src/dehelper" />
+      <root url="file://$USER_HOME$/dehelper/src/sourcegraph.com" />
+      <root url="file://$USER_HOME$/dehelper/src/config" />
+    </SOURCES>
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>
