@@ -79,5 +79,34 @@ func main2(){
 	//操作指针 进行修改
 	t.(*data).x = 200
 }
+//只有当itab 和 data 都是nil的时候  接口才是nil
 
 
+
+
+//================华丽丽的分割线
+
+
+type data int
+
+func (d data) String() string{
+	return fmt.Sprintf("data:%d",d)
+}
+
+func main() {
+	var d data = 15
+	var x interface{} = d
+	//ok-idiom方式能够避免转换失败不至于进入panic
+	if n,ok := x.(fmt.Stringer);ok{
+		//转换为更具体的接口
+		fmt.Println(n)
+	}
+
+	if d2, ok := x.(data);ok{
+		//转换回原始类型
+		fmt.Println(d2)
+	}
+
+	e:=x.(error)
+	fmt.Println(e)
+}
