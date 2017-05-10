@@ -1,7 +1,7 @@
 package main
 
 import(
-	"fmt"
+	//"fmt"
 )
 
 //go鼓励使用csp通道来代替内存共享 实现并发安全
@@ -40,15 +40,26 @@ import(
 //
 //}
 
-func main() {
-	var a,b chan int = make(chan int,3),make(chan int)
-	var c chan bool
-
-	println(a == b)
-	println(c == nil)
-
-	fmt.Printf("%p,%d\n",a,unsafe.Sizeof(a))
-
-}
+//func main() {
+//	var a,b chan int = make(chan int,3),make(chan int)
+//	var c chan bool
+//
+//	println(a == b)
+//	println(c == nil)
+//
+//	fmt.Printf("%p,%d\n",a,unsafe.Sizeof(a))
+//
+//}
 //缓冲区大小仅是内部属性 不属于类型组成部分 另外通道变量本身就是指针 可用相等操作符判断是否为同一对象
 
+func main() {
+	a,b :=make(chan int),make(chan int,3)
+
+
+	b<-1
+	b<-2
+
+	println("a:",len(a),cap(a))
+	println("b:",len(b),cap(b))
+}
+//内置函数 cap和len返回缓冲区大小和当前已缓冲数量 而对于同步通道都返回0
