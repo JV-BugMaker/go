@@ -17,7 +17,12 @@ func main() {
 
 			println(x)
 		}
-		
+		//使用range方式更加简洁
+		//使用ok-idom方式 能够避免很多错误问题
+		for x:=range c{
+			println(x)
+		}
+
 	}()
 
 	c<-1
