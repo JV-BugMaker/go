@@ -66,14 +66,24 @@ func main2() {
 	//2:running
 	//3:running
 }
-
+//还可以使用sync.Cond实现单广播或广播事件
 //对于closed或nil通道 发送和接收操作都有相应规则:
 //* 向已关闭通道发送数据,引发panic。
 //* 从已关闭接收数据，返回已缓冲数据或零值
 //* 无论收发,nil通道都会阻塞
 
 func main3() {
+	c := make(chan int,3)
 
+	c<-10
+	c<-20
+
+	close(c)
+
+	for i:=0;i<cpa(c)+1;i++{
+		x , ok := <-c
+		println(i,":",ok,x)
+	}
 }
 
 
