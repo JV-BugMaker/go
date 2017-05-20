@@ -59,3 +59,23 @@ func testBlock(){
 	close(c)
 	<-done
 }
+
+func test2(){
+	c := make(chan int)
+	for i := 0;i < 10;i++{
+		go func(){
+			<-c
+		}()
+
+
+	}
+}
+
+func main() {
+	test2()
+
+	for {
+		time.Sleep(time.Second)
+		runtime.GC() //强制gc
+	}
+}
